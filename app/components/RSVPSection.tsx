@@ -120,9 +120,6 @@ export default function RSVPSection() {
           <p style={{ fontFamily: "'Cormorant Garamond', serif", color: "#D9D2C4", fontSize: "1.05rem", maxWidth: 460, margin: "0 auto" }}>
             Will you be joining us in celebration? Come and bless us — <span style={{ color: "#E7CE8E", fontWeight: 600 }}>your presence makes us more happy.</span>
           </p>
-          <p className="mt-3" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.8rem", color: "#9AA4BD" }}>
-            Please respond by <strong style={{ color: "#C9A24B" }}>October 1, 2026</strong>
-          </p>
         </motion.div>
 
         <AnimatePresence mode="wait">
