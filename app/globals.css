@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ELEGANT NAVY & GOLD THEME — inspired by a deep navy watercolour wedding
+   invitation with delicate gold florals and refined gold script.
+   Fonts: Cinzel (display) · Cormorant Garamond (body) · Tangerine (script).
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Core palette */
+  --navy:       #0B0B0B;   /* black base */
+  --navy-2:     #151210;   /* slightly warm black section */
+  --navy-3:     #050505;   /* darkest black */
+  --navy-card:  #1C1712;   /* card / panel — warm charcoal */
+
+  --gold:       #C9A24B;   /* warm antique gold */
+  --gold-light: #E7CE8E;   /* light champagne gold */
+  --gold-bright:#F0DCA0;   /* bright gold highlight */
+  --gold-deep:  #A07E2E;   /* deep gold */
+
+  --ivory:      #F4EFE4;   /* warm ivory text */
+  --ivory-soft: #D9D2C4;   /* soft ivory body text */
+  --muted:      #9AA4BD;   /* muted blue-grey */
+
+  /* Aliases for existing components */
+  --marigold:  var(--gold);
+  --magenta:   var(--gold-light);
+  --teal:      var(--gold-light);
+  --purple:    var(--gold);
+  --coral:     var(--gold-light);
+  --lime:      var(--gold-light);
+  --cream:     var(--navy);
+  --cream-2:   var(--navy-2);
+  --ink:       var(--ivory);
+  --ink-soft:  var(--ivory-soft);
+  --white:     var(--navy-card);
+
+  --gold-mid:   var(--gold);
+  --gold-old:   var(--gold);
+  --gold-dark:  var(--gold-deep);
+  --bg-base:    var(--navy);
+  --bg-section: var(--navy);
+  --bg-section-alt: var(--navy-2);
+  --bg-card:    var(--navy-card);
+  --bg-input:   #141414;
+  --bg-hover:   #1C1712;
+  --text-primary: var(--ivory);
+  --text-body:    var(--ivory-soft);
+  --text-subtle:  var(--gold);
+  --text-muted:   var(--muted);
+  --border:       rgba(201,162,75,0.32);
+  --border-focus: var(--gold);
+  --border-card:  rgba(201,162,75,0.25);
+  --error:        #E9899A;
+  --success:      #86D8B0;
+  --ivory-dark:   var(--navy-2);
+  --charcoal:     var(--ivory);
+  --off-white:    var(--navy-card);
+}
+
+/* ─── Reset & Base ───────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--navy);
+  color: var(--ivory);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cinzel', Georgia, serif;
+  color: var(--ivory);
+  line-height: 1.15;
+}
+p { line-height: 1.7; }
+
+/* ─── Gold shimmer text ──────────────────────────────────────────────────── */
+.festive-text, .gold-text {
+  background: linear-gradient(100deg, var(--gold-deep), var(--gold), var(--gold-bright), var(--gold), var(--gold-deep));
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: hueShift 7s linear infinite;
+}
+@keyframes hueShift {
+  0%   { background-position: 0% center; }
+  100% { background-position: 250% center; }
+}
+
+/* Elegant script accent (e.g. "wedding", "&") */
+.script {
+  font-family: 'Tangerine', cursive;
+  color: var(--gold-light);
+  line-height: 1;
+}
+
+/* ─── Buttons ────────────────────────────────────────────────────────────── */
+.btn-fest {
+  display: inline-block;
+  padding: 0.85rem 2.4rem;
+  border-radius: 2px;
+  font-family: 'Cinzel', serif;
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid var(--gold);
+  color: var(--navy);
+  background: linear-gradient(120deg, var(--gold), var(--gold-light));
+  transition: all 0.25s ease;
+}
+.btn-fest:hover { background: linear-gradient(120deg, var(--gold-light), var(--gold-bright)); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(201,162,75,0.3); }
+.btn-fest:disabled { opacity: 0.6; cursor: wait; }
+
+.btn-outline {
+  display: inline-block;
+  padding: 0.8rem 2.2rem;
+  border-radius: 2px;
+  font-family: 'Cinzel', serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--gold);
+  background: transparent;
+  border: 1px solid var(--gold);
+  transition: all 0.25s ease;
+}
+.btn-outline:hover { background: rgba(201,162,75,0.12); transform: translateY(-2px); }
+
+/* ─── Dividers ───────────────────────────────────────────────────────────── */
+.section-divider {
+  width: 90px; height: 1px; margin: 0 auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  position: relative;
+}
+/* squiggle → elegant gold rule with center diamond */
+.squiggle {
+  width: 160px; height: 16px; margin: 0 auto;
+  position: relative;
+}
+.squiggle::before {
+  content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.squiggle::after {
+  content: "❖"; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%); color: var(--gold);
+  font-size: 0.8rem; background: transparent;
+}
+
+/* ─── Confetti → drifting gold sparkles ──────────────────────────────────── */
+.confetti-piece, .particle {
+  position: absolute; top: -20px; border-radius: 50%;
+  pointer-events: none; animation: confettiFall linear infinite;
+  box-shadow: 0 0 6px rgba(240,220,160,0.7);
+}
+@keyframes confettiFall {
+  0%   { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.9; }
+  90%  { opacity: 0.9; }
+  100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+}
+
+/* ─── Cards ──────────────────────────────────────────────────────────────── */
+.fest-card {
+  background: var(--navy-card);
+  border: 1px solid rgba(201,162,75,0.28);
+  border-radius: 6px;
+  box-shadow: 0 12px 34px rgba(0,0,0,0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+}
+.fest-card:hover { transform: translateY(-5px); box-shadow: 0 20px 44px rgba(0,0,0,0.55); border-color: rgba(201,162,75,0.5); }
+
+/* ─── Form elements ──────────────────────────────────────────────────────── */
+input[type="text"], input[type="email"], input[type="tel"],
+input[type="password"], textarea, select {
+  background: #141414;
+  color: var(--ivory);
+  border: 1px solid rgba(201,162,75,0.3);
+  border-radius: 3px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,162,75,0.15);
+}
+input::placeholder, textarea::placeholder { color: var(--muted); }
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--navy-3); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.nav-blur { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+
+/* ─── Floating music button ──────────────────────────────────────────────── */
+.music-btn {
+  position: fixed; bottom: 22px; right: 22px; z-index: 40;
+  display: flex; align-items: center; gap: 8px;
+  padding: 11px 18px; border-radius: 999px;
+  background: rgba(11,11,11,0.9);
+  border: 1px solid var(--gold); color: var(--gold);
+  font-family: 'Cinzel', serif; font-weight: 500;
+  font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+  cursor: pointer; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.music-btn:hover { transform: translateY(-3px); background: rgba(201,162,75,0.15); }
+.music-icon { font-size: 1.1rem; line-height: 1; }
+.music-icon.spin { animation: musicSpin 3s linear infinite; }
+@keyframes musicSpin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+@media (max-width: 640px) { .music-label { display: none; } .music-btn { padding: 12px; } }
+
+/* ─── Intro overlay ──────────────────────────────────────────────────────── */
+.envelope-overlay { position: fixed; inset: 0; z-index: 9999; display: flex;
+  align-items: center; justify-content: center; opacity: 1; transition: opacity 0.7s ease; }
+.envelope-overlay.is-gone { opacity: 0; pointer-events: none; }
+.envelope-stage { display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 24px; }
+.tap-hint { font-family: 'Cinzel', serif; font-weight: 500; letter-spacing: 0.16em;
+  font-size: 0.75rem; margin: 0; color: var(--gold); animation: pulse 2.2s ease-in-out infinite; }
+.tap-hint.delivered { color: var(--gold-light); }
+.audio-note { margin-top: 10px; font-family: 'Cormorant Garamond', serif; font-weight: 400;
+  font-size: 0.8rem; letter-spacing: 0.06em; color: var(--muted); }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.45; } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+@keyframes pulse-gold { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+/* ─── Reduced motion ─────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .festive-text, .gold-text, .confetti-piece, .particle, .music-icon.spin, .tap-hint {
+    animation: none !important;
+  }
+  .festive-text, .gold-text {
+    background: var(--gold);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+}
