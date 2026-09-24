@@ -25,46 +25,11 @@ interface EventItem {
 
 const events: EventItem[] = [
   {
-    id: "mehendi", emoji: "🤚", name: "Mehendi",
-    date: "Thu, Nov 19", time: "6:00 – 8:00 PM", venue: "[Venue TBD]", dress: "Maroon",
-    // Complete maroon
-    bg: "linear-gradient(160deg, #4A0D22 0%, #6E1533 55%, #3A0A1B 100%)",
-    accent: "#F0A9C0", text: "#FCE9EF", textMuted: "#E3B8C6", chipBg: "rgba(255,255,255,0.12)", tilt: -2,
-  },
-  {
-    id: "engagement", emoji: "💍", name: "Engagement",
-    date: "Fri, Nov 20", time: "10:00 AM – 12 PM", venue: "[Venue TBD]", dress: "Red",
-    // Red
-    bg: "linear-gradient(160deg, #8E1116 0%, #C1121F 55%, #7A0E14 100%)",
-    accent: "#FFD2C0", text: "#FFECE8", textMuted: "#F4C3B8", chipBg: "rgba(255,255,255,0.14)", tilt: 1.5,
-  },
-  {
-    id: "haldi", emoji: "☀️", name: "Haldi",
-    date: "Fri, Nov 20", time: "1:00 – 4:00 PM", venue: "[Venue TBD]", dress: "Beach Pink",
-    // Beach pink
-    bg: "linear-gradient(160deg, #FF9CC7 0%, #FF6FB5 55%, #F25FA6 100%)",
-    accent: "#7A1F4D", text: "#4A0E2E", textMuted: "#7A2A52", chipBg: "rgba(255,255,255,0.4)", tilt: -1.5,
-  },
-  {
-    id: "ceremony", emoji: "🪔", name: "Bride & Groom Ceremony",
-    date: "Fri, Nov 20", time: "5:00 – 7:00 PM", venue: "[Venue TBD]", dress: "White",
-    // White / ivory
-    bg: "linear-gradient(160deg, #FFFFFF 0%, #F4F0E6 55%, #EDE7D6 100%)",
-    accent: "#B08A34", text: "#2B2415", textMuted: "#6E6350", chipBg: "rgba(176,138,52,0.14)", tilt: 2,
-  },
-  {
     id: "wedding", emoji: "🪷", name: "Wedding",
-    date: "Sat, Nov 21", time: "10:00 AM onwards", venue: "[Venue TBD]", dress: "Antique Gold",
+    date: "Saturday, Nov 21, 2026", time: "10:00 AM onwards", venue: "[Venue TBD]", dress: "Antique Gold",
     // Antique gold
     bg: "linear-gradient(160deg, #E7CE8E 0%, #C9A24B 55%, #A07E2E 100%)",
-    accent: "#4A3611", text: "#2E2208", textMuted: "#5C4A1E", chipBg: "rgba(46,34,8,0.1)", tilt: -2,
-  },
-  {
-    id: "reception", emoji: "🎉", name: "Reception",
-    date: "Sun, Nov 22", time: "6:00 PM – 12 AM", venue: "[Venue TBD]", dress: "Black · Neon Lights",
-    // Black with neon black-light accents
-    bg: "linear-gradient(160deg, #050509 0%, #0E0A1A 55%, #000000 100%)",
-    accent: "#B57BFF", text: "#EDE6FF", textMuted: "#9C8FC7", chipBg: "rgba(181,123,255,0.16)", tilt: 1.5,
+    accent: "#4A3611", text: "#2E2208", textMuted: "#5C4A1E", chipBg: "rgba(46,34,8,0.1)", tilt: 0,
   },
 ];
 
@@ -82,15 +47,15 @@ export default function EventsSection() {
           className="text-center mb-14"
         >
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.24em", color: "#C9A24B", textTransform: "uppercase" }}>
-            6 Celebrations · Nov 19–22
+            Saturday · November 21, 2026
           </p>
           <h2 className="festive-text mt-3" style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(2.2rem, 6vw, 3.6rem)" }}>
-            Wedding Celebration
+            The Wedding
           </h2>
           <div className="squiggle mt-5" />
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div className="flex justify-center max-w-sm mx-auto">
           {events.map((e, i) => {
             const isReception = e.id === "reception";
             return (

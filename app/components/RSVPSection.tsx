@@ -33,15 +33,6 @@ const defaultGuest = (): GuestEntry => ({
   mehendi: false, engagement: false, haldi: false, ceremony: false, wedding: false, reception: false,
 });
 
-const weddingEvents = [
-  { key: "mehendi"    as const, label: "Mehendi",    emoji: "🤚", color: "#8E1537" },
-  { key: "engagement" as const, label: "Engagement",  emoji: "💍", color: "#E63946" },
-  { key: "haldi"      as const, label: "Haldi",       emoji: "☀️", color: "#FF6FB5" },
-  { key: "ceremony"   as const, label: "Ceremony",    emoji: "🪔", color: "#E7CE8E" },
-  { key: "wedding"    as const, label: "Wedding",     emoji: "🪷", color: "#2A9D8F" },
-  { key: "reception"  as const, label: "Reception",   emoji: "🎉", color: "#E7CE8E" },
-];
-
 const mealOptions = [
   { value: "",           label: "Select meal preference…" },
   { value: "vegetarian", label: "🥗 Vegetarian" },
@@ -90,17 +81,16 @@ export default function RSVPSection() {
       const g = form.guests[i];
       if (!g.name.trim()) { setValidation(`Please enter a name for Guest ${i + 1}.`); return; }
       if (!g.attending)   { setValidation(`Please confirm attendance for ${g.name || `Guest ${i + 1}`}.`); return; }
-      if (g.attending === "accepts") {
-        const keys = ["mehendi","engagement","haldi","ceremony","wedding","reception"] as const;
-        if (!keys.some((k) => g[k])) { setValidation(`Please select at least one event for ${g.name || `Guest ${i + 1}`}.`); return; }
-      }
     }
+    // Wedding-only invite: mark the wedding for every attending guest.
+    const guests = form.guests.map((g) => g.attending === "accepts" ? { ...g, wedding: true } : g);
+    const payload = { ...form, guests };
     setValidation("");
     setSubmitState("submitting");
     try {
       const res = await fetch("https://fd1g9wqk2d.execute-api.us-east-1.amazonaws.com/api/rsvp", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify(payload),
       });
       const data = await res.json();
       if (res.ok && data.success) {
@@ -247,22 +237,6 @@ export default function RSVPSection() {
                             <select value={guest.meal} onChange={(e) => updateGuest(i, "meal", e.target.value)} style={{ cursor: "pointer" }}>
                               {mealOptions.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
                             </select>
-                          </div>
-
-                          <label style={labelStyle}>Events attending *</label>
-                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                            {weddingEvents.map((ev) => {
-                              const on = guest[ev.key];
-                              return (
-                                <label key={ev.key} className="flex items-center gap-2 cursor-pointer p-2"
-                                  style={{ borderRadius: 999, border: `2px solid ${on ? ev.color : "rgba(246,236,251,0.18)"}`, background: on ? `${ev.color}26` : "#141414", transition: "all 0.15s" }}>
-                                  <input type="checkbox" checked={on} onChange={(e) => updateGuest(i, ev.key, e.target.checked)} className="sr-only" />
-                                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: on ? 700 : 500, fontSize: "0.74rem", color: on ? ev.color : "#D9D2C4" }}>
-                                    {ev.emoji} {ev.label}
-                                  </span>
-                                </label>
-                              );
-                            })}
                           </div>
                         </>
                       )}

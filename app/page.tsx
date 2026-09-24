@@ -5,7 +5,6 @@ import AutoScroll from "./components/AutoScroll";
 import HeroSection from "./components/HeroSection";
 import CountdownSection from "./components/CountdownSection";
 import EventsSection from "./components/EventsSection";
-import DressCodeSection from "./components/DressCodeSection";
 import RSVPSection from "./components/RSVPSection";
 import GallerySection from "./components/GallerySection";
 import RegistrySection from "./components/RegistrySection";
@@ -20,7 +19,6 @@ export default function Home() {
       <GlobalNav />
       <HeroSection />
       <EventsSection />
-      <DressCodeSection />
       <RSVPSection />
       <GallerySection />
       <RegistrySection />
