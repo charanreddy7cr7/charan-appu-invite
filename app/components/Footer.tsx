@@ -35,7 +35,7 @@ export default function Footer() {
         {/* Quick links */}
         <div className="mt-10 flex flex-wrap justify-center gap-6">
           {[
-            { label: "Events", href: "#events" },
+            { label: "Wedding", href: "#events" },
             { label: "RSVP", href: "#rsvp" },
             { label: "Gallery", href: "#gallery" },
             { label: "Host Login", href: "/admin/" },
@@ -47,8 +47,18 @@ export default function Footer() {
           ))}
         </div>
 
-        <p className="mt-12" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.72rem", color: "#9AA4BD" }}>
-          With love,  Apoorva &amp; Charan · 2026
+        {/* Invited by */}
+        <div className="mt-12 pt-8" style={{ borderTop: "1px solid rgba(201,162,75,0.2)", maxWidth: 340, marginLeft: "auto", marginRight: "auto" }}>
+          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.7rem", letterSpacing: "0.2em", color: "#9AA4BD", textTransform: "uppercase" }}>
+            Invited by
+          </p>
+          <p className="mt-2" style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.05rem", color: "#E7CE8E", letterSpacing: "0.03em" }}>
+            Soumya &amp; Shashindhar Jaidi
+          </p>
+        </div>
+
+        <p className="mt-8" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.72rem", color: "#9AA4BD" }}>
+          With love, Apoorva &amp; Charan · 2026
         </p>
       </div>
     </footer>
