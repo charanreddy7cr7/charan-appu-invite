@@ -63,6 +63,16 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Telugu note from the nephews */}
+        <div className="mt-8" style={{ maxWidth: 520, marginLeft: "auto", marginRight: "auto" }}>
+          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontSize: "1.05rem", color: "#F4EFE4", lineHeight: 1.6 }}>
+            మా బాబాయి పెళ్ళికి తప్పక రాగలరు
+          </p>
+          <p className="mt-1" style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "0.9rem", color: "#E7CE8E", letterSpacing: "0.03em" }}>
+            — దైవాంశ్ రెడ్డి &amp; నిహాన్ రెడ్డి
+          </p>
+        </div>
+
         <p className="mt-8" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.72rem", color: "#9AA4BD" }}>
           With love, Apoorva &amp; Charan · 2026
         </p>
