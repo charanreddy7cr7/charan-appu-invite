@@ -55,6 +55,9 @@ export default function Footer() {
           <p className="mt-2" style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.05rem", color: "#E7CE8E", letterSpacing: "0.03em" }}>
             Soumya &amp; Shashindhar Jaidi
           </p>
+          <p className="mt-1" style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.05rem", color: "#E7CE8E", letterSpacing: "0.03em" }}>
+            Anjali &amp; Ajay Maggidi
+          </p>
         </div>
 
         <p className="mt-8" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.72rem", color: "#9AA4BD" }}>
