@@ -120,7 +120,7 @@ export default function EnvelopeIntro() {
               Apoorva <span style={{ color: "#E7CE8E" }}>&amp;</span> Charan
             </p>
             <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, color: "#D9D2C4", fontSize: "0.92rem", marginTop: "0.3rem" }}>
-              November 19–22, 2026
+              November 21, 2026
             </p>
 
             <button onClick={enter} disabled={opening} className="btn-fest mt-6">

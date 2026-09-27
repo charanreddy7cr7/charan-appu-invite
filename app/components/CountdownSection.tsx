@@ -84,10 +84,10 @@ export default function CountdownSection() {
           className="festive-text mt-12"
           style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "clamp(1.8rem, 5vw, 2.8rem)" }}
         >
-          November 19–22, 2026
+          November 21, 2026
         </motion.h2>
         <p className="mt-3" style={{ fontFamily: "'Cormorant Garamond', serif", color: "#D9D2C4", fontSize: "1.05rem" }}>
-          Save the date — we can we can&apos;t wait to celebrate with you! 🎊apos;t wait to celebrate with you.
+          Save the date — we can&apos;t wait to celebrate with you!
         </p>
       </div>
     </section>
