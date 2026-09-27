@@ -110,9 +110,6 @@ export default function RSVPSection() {
       <div className="relative z-10 max-w-2xl mx-auto">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
-          <img src="/temple-deities-gold.png" alt="Sri Venkateswara & Padmavathi"
-            className="mx-auto mb-5"
-            style={{ width: "min(70vw, 260px)", height: "auto", filter: "drop-shadow(0 4px 14px rgba(0,0,0,0.4))" }} />
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.75rem", letterSpacing: "0.2em", color: "#C9A24B", textTransform: "uppercase" }}>
             Apoorva &amp; Charan
           </p>
