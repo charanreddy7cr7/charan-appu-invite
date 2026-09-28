@@ -221,23 +221,6 @@ export default function RSVPSection() {
                 </button>
               </div>
 
-              {/* Extras */}
-              <div style={panelStyle}>
-                <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.1rem", color: "#F4EFE4", marginBottom: "1rem" }}>✨ A few more things</p>
-                <div className="space-y-4">
-                  <div>
-                    <label style={labelStyle}>🎵 Song request for the party</label>
-                    <input type="text" placeholder="What should we play?" value={form.songRequest}
-                      onChange={(e) => setForm((p) => ({ ...p, songRequest: e.target.value }))} />
-                  </div>
-                  <div>
-                    <label style={labelStyle}>💌 Message for Apoorva &amp; Charan</label>
-                    <textarea rows={4} placeholder="Share a wish or your blessings…" value={form.message}
-                      onChange={(e) => setForm((p) => ({ ...p, message: e.target.value }))} style={{ resize: "vertical" }} />
-                  </div>
-                </div>
-              </div>
-
               {/* Submit */}
               <div className="text-center pt-2">
                 {validationError && (

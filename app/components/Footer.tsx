@@ -37,7 +37,6 @@ export default function Footer() {
           {[
             { label: "Wedding", href: "#events" },
             { label: "RSVP", href: "#rsvp" },
-            { label: "Gallery", href: "#gallery" },
             { label: "Host Login", href: "/admin/" },
           ].map((l) => (
             <a key={l.href} href={l.href}

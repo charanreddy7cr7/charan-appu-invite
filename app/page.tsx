@@ -6,7 +6,6 @@ import HeroSection from "./components/HeroSection";
 import CountdownSection from "./components/CountdownSection";
 import EventsSection from "./components/EventsSection";
 import RSVPSection from "./components/RSVPSection";
-import GallerySection from "./components/GallerySection";
 import RegistrySection from "./components/RegistrySection";
 import Footer from "./components/Footer";
 
@@ -20,7 +19,6 @@ export default function Home() {
       <HeroSection />
       <EventsSection />
       <RSVPSection />
-      <GallerySection />
       <RegistrySection />
       <CountdownSection />
       <Footer />
