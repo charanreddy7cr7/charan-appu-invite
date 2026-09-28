@@ -78,12 +78,13 @@ export default function RSVPSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    for (let i = 0; i < form.guests.length; i++) {
-      const g = form.guests[i];
-      if (!g.name.trim()) { setValidation(`Please enter a name for Guest ${i + 1}.`); return; }
-    }
-    // Wedding-only invite: everyone who RSVPs is attending the wedding.
-    const guests = form.guests.map((g) => ({ ...g, attending: "accepts" as const, wedding: true }));
+    // Guest name is optional — fill a fallback for any left blank.
+    const guests = form.guests.map((g, idx) => ({
+      ...g,
+      name: g.name.trim() || `Guest ${idx + 1}`,
+      attending: "accepts" as const,
+      wedding: true,
+    }));
     const payload = { ...form, guests };
     setValidation("");
     setSubmitState("submitting");
@@ -193,7 +194,7 @@ export default function RSVPSection() {
                       </div>
 
                       <div className="mb-4">
-                        <label style={labelStyle}>Guest name *</label>
+                        <label style={labelStyle}>Guest name</label>
                         <input type="text" placeholder="Full name" value={guest.name}
                           onChange={(e) => updateGuest(i, "name", e.target.value)} />
                       </div>
