@@ -103,13 +103,13 @@ p { line-height: 1.7; }
   padding: 0.85rem 2.4rem;
   border-radius: 2px;
   font-family: 'Cinzel', serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.82rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   cursor: pointer;
   border: 1px solid var(--gold);
-  color: var(--navy);
+  color: #2E2A22;
   background: linear-gradient(120deg, var(--gold), var(--gold-light));
   transition: all 0.25s ease;
 }
@@ -211,7 +211,7 @@ input::placeholder, textarea::placeholder { color: var(--muted); }
   position: fixed; bottom: 22px; right: 22px; z-index: 40;
   display: flex; align-items: center; gap: 8px;
   padding: 11px 18px; border-radius: 999px;
-  background: rgba(10,26,63,0.92);
+  background: rgba(255,255,255,0.92);
   border: 1px solid var(--gold); color: var(--gold);
   font-family: 'Cinzel', serif; font-weight: 500;
   font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
