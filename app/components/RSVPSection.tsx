@@ -71,8 +71,6 @@ export default function RSVPSection() {
       return { ...p, guests: g };
     });
   };
-  const addGuest    = () => setForm((p) => ({ ...p, guests: [...p.guests, defaultGuest()] }));
-  const removeGuest = (i: number) => { if (form.guests.length > 1) setForm((p) => ({ ...p, guests: p.guests.filter((_, idx) => idx !== i) })); };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -168,15 +166,6 @@ export default function RSVPSection() {
                 <div className="space-y-5 mt-5">
                   {form.guests.map((guest, i) => (
                     <div key={i} style={{ border: "2px solid rgba(246,236,251,0.12)", borderRadius: 18, padding: "1.1rem", background: "#FFFCF5" }}>
-                      {i > 0 && (
-                        <div className="flex items-center justify-end mb-3">
-                          <button type="button" onClick={() => removeGuest(i)}
-                            style={{ color: "#E63946", fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", background: "none", border: "none", cursor: "pointer" }}>
-                            Remove
-                          </button>
-                        </div>
-                      )}
-
                       <div className="grid grid-cols-2 gap-3 mb-3">
                             {(["adults", "kids"] as const).map((field) => (
                               <div key={field} className="flex items-center justify-between p-3" style={{ border: "2px solid rgba(246,236,251,0.12)", borderRadius: 14 }}>
@@ -195,9 +184,6 @@ export default function RSVPSection() {
                   ))}
                 </div>
 
-                <button type="button" onClick={addGuest} className="btn-outline mt-4 w-full" style={{ borderStyle: "dashed" }}>
-                  + Add another guest
-                </button>
               </div>
 
               {/* Submit */}
