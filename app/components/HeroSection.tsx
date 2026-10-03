@@ -149,11 +149,8 @@ export default function HeroSection() {
 
           {/* Buttons */}
           <div className="flex gap-4 justify-center">
-            <a href="#rsvp" className="btn-fest flex-1 text-center" style={{ maxWidth:"180px" }}>
+            <a href="#rsvp" className="btn-fest text-center" style={{ maxWidth:"220px", minWidth:"180px" }}>
               RSVP
-            </a>
-            <a href="#events" className="btn-outline flex-1 text-center" style={{ maxWidth:"180px" }}>
-              View Events
             </a>
           </div>
         </motion.div>
