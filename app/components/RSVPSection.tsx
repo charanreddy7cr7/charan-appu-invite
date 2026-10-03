@@ -65,10 +65,6 @@ export default function RSVPSection() {
   const [submitState, setSubmitState]    = useState<SubmitState>("idle");
   const [validationError, setValidation] = useState("");
 
-  const updateGuest = (i: number, field: keyof GuestEntry, val: string | number | boolean) => {
-    if (validationError) setValidation("");
-    setForm((p) => { const g = [...p.guests]; g[i] = { ...g[i], [field]: val }; return { ...p, guests: g }; });
-  };
   const adjustCount = (i: number, field: "adults" | "kids", delta: number) => {
     setForm((p) => {
       const g = [...p.guests]; const min = field === "adults" ? 1 : 0;
@@ -178,21 +174,14 @@ export default function RSVPSection() {
                 <div className="space-y-5 mt-5">
                   {form.guests.map((guest, i) => (
                     <div key={i} style={{ border: "2px solid rgba(246,236,251,0.12)", borderRadius: 18, padding: "1.1rem", background: "#FFFCF5" }}>
-                      <div className="flex items-center justify-between mb-3">
-                        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 700, fontSize: "0.75rem", letterSpacing: "0.1em", color: "#B89043", textTransform: "uppercase" }}>Guest {i + 1}</span>
-                        {i > 0 && (
+                      {i > 0 && (
+                        <div className="flex items-center justify-end mb-3">
                           <button type="button" onClick={() => removeGuest(i)}
                             style={{ color: "#E63946", fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "0.72rem", background: "none", border: "none", cursor: "pointer" }}>
                             Remove
                           </button>
-                        )}
-                      </div>
-
-                      <div className="mb-4">
-                        <label style={labelStyle}>Guest name</label>
-                        <input type="text" placeholder="Full name" value={guest.name}
-                          onChange={(e) => updateGuest(i, "name", e.target.value)} />
-                      </div>
+                        </div>
+                      )}
 
                       <div className="grid grid-cols-2 gap-3 mb-3">
                             {(["adults", "kids"] as const).map((field) => (
