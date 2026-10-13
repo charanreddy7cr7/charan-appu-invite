@@ -53,11 +53,11 @@ export default function Footer() {
           </p>
           <div className="mt-3 flex items-start justify-center gap-6 flex-wrap">
             <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.02rem", color: "#B89043", letterSpacing: "0.03em" }}>
-              Soumya &amp; Shashindhar Jaidi
+              Soumya &amp; Shashindhar
             </p>
             <span style={{ color: "#C9A24B", opacity: 0.6 }}>·</span>
             <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 500, fontSize: "1.02rem", color: "#B89043", letterSpacing: "0.03em" }}>
-              Anjali &amp; Ajay Maggidi
+              Anjali &amp; Ajay
             </p>
           </div>
         </div>
