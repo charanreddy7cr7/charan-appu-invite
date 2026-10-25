@@ -70,73 +70,32 @@ export default function EventsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="relative overflow-hidden w-full"
-                style={{
-                  background: e.bg,
-                  borderRadius: 18,
-                  border: `1.5px solid ${e.accent}55`,
-                  boxShadow: `0 14px 36px rgba(0,0,0,0.35)`,
-                  padding: "2.2rem 2rem",
-                  minHeight: 320,
-                }}
+                className="relative w-full flex flex-col items-center"
               >
-                {/* Corner flourishes */}
-                <span style={{ position: "absolute", top: 12, left: 12, width: 20, height: 20, borderTop: `1.5px solid ${e.accent}`, borderLeft: `1.5px solid ${e.accent}`, opacity: 0.7 }} />
-                <span style={{ position: "absolute", top: 12, right: 12, width: 20, height: 20, borderTop: `1.5px solid ${e.accent}`, borderRight: `1.5px solid ${e.accent}`, opacity: 0.7 }} />
-                <span style={{ position: "absolute", bottom: 12, left: 12, width: 20, height: 20, borderBottom: `1.5px solid ${e.accent}`, borderLeft: `1.5px solid ${e.accent}`, opacity: 0.7 }} />
-                <span style={{ position: "absolute", bottom: 12, right: 12, width: 20, height: 20, borderBottom: `1.5px solid ${e.accent}`, borderRight: `1.5px solid ${e.accent}`, opacity: 0.7 }} />
+                <img src="/wedding-card.jpg" alt={`${e.name} — ${e.date}, ${e.venueName}`}
+                  style={{ width: "100%", height: "auto", display: "block", borderRadius: 10 }} />
 
-                <div className="relative z-10 flex flex-col items-center h-full">
-                  {/* Emoji medallion */}
-                  <div className="flex items-center justify-center mx-auto mb-4"
-                    style={{ width: 72, height: 72, borderRadius: 999, background: e.chipBg, border: `1.5px solid ${e.accent}66`, fontSize: "2.2rem" }}>
-                    {e.emoji}
-                  </div>
-
-                  <h3 className="text-center" style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1.4rem", color: e.text, letterSpacing: "0.04em", lineHeight: 1.3 }}>
-                    {e.name}
-                  </h3>
-
-                  <div className="mt-3 text-center space-y-1">
-                    <p style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 600, fontSize: "1.05rem", color: e.accent }}>
-                      {e.date}
-                    </p>
-                    <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.95rem", color: e.text }}>
-                      {e.time}
-                    </p>
-                  </div>
-
-                  {/* Venue */}
-                  <div className="mt-5 text-center" style={{ borderTop: `1px solid ${e.accent}33`, paddingTop: "1.1rem", width: "100%" }}>
-                    <p style={{ fontFamily: "'Cinzel', serif", fontWeight: 600, fontSize: "1rem", color: e.text, letterSpacing: "0.03em" }}>
-                      📍 {e.venueName}
-                    </p>
-                    <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.9rem", color: e.textMuted, marginTop: "0.25rem" }}>
-                      {e.venueAddress}
-                    </p>
-                    <a
-                      href={`https://maps.google.com/?q=${e.mapQuery}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block mt-4 px-5 py-2"
-                      style={{
-                        border: `1.5px solid ${e.accent}`,
-                        borderRadius: 999,
-                        color: e.text,
-                        fontFamily: "'Cinzel', serif",
-                        fontWeight: 500,
-                        fontSize: "0.72rem",
-                        letterSpacing: "0.14em",
-                        textTransform: "uppercase",
-                        textDecoration: "none",
-                        background: e.chipBg,
-                      }}
-                    >
-                      Get Directions →
-                    </a>
-                  </div>
-                </div>
+                <a
+                  href={`https://maps.google.com/?q=${e.mapQuery}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-6 px-7 py-3"
+                  style={{
+                    border: `1.5px solid ${e.accent}`,
+                    borderRadius: 999,
+                    color: e.text,
+                    fontFamily: "'Cinzel', serif",
+                    fontWeight: 500,
+                    fontSize: "0.75rem",
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    textDecoration: "none",
+                    background: "linear-gradient(135deg, #FDF2C9 0%, #F6D998 50%, #D5A54F 100%)",
+                    boxShadow: "0 4px 14px rgba(90,65,12,0.3)",
+                  }}
+                >
+                  Get Directions →
+                </a>
               </motion.div>
             );
           })}
